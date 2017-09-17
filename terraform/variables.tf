@@ -5,7 +5,7 @@ variable "aws_key_name" {}
 
 variable "aws_region" {
     description = "EC2 Region for the VPC"
-    default = "eu-west-1"
+    default = "us-east-2"
 }
 
 variable "amis" {
