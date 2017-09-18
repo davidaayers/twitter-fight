@@ -1,17 +1,48 @@
-variable "aws_access_key" {}
-variable "aws_secret_key" {}
-variable "aws_key_path" {}
-variable "aws_key_name" {}
+# Provided in terraform.tfvars
+variable "aws_access_key" {
+    description = "AWS Access Key"
+}
+variable "aws_secret_key" {
+    description = "AWS Secret Key"
+}
+variable "aws_key_name" {
+    description = "Name of the SSH keypair to use in AWS."
+}
+variable "aws_key_path" {
+    description = "Path to the private portion of the SSH key specified."
+}
 
+# Defined here
 variable "aws_region" {
     description = "EC2 Region for the VPC"
-    default = "us-east-2"
+    default = "us-east-1"
+}
+
+variable "aws_availability_zone" {
+    description = "EC2 Availability zone for the VPC"
+    default = "us-east-1a"
 }
 
 variable "amis" {
-    description = "AMIs by region"
+    type = "map"
+    description = "Base Amazon Linux AMIs by region"
     default = {
-        eu-west-1 = "ami-f1810f86" # ubuntu 14.04 LTS
+        us-east-1 = "ami-4fffc834"
+    }
+}
+
+# https://aws.amazon.com/marketplace/fulfillment?productId=5ab8e16a-7f76-42ee-a869-4c2ca41acc10&ref_=dtl_psb_continue&region=us-east-1
+variable "kafka-amis" {
+    description = "Pre-configured AMI to run kafka by region"
+    default = {
+        us-east-1 = "ami-603c3276"
+    }
+}
+
+variable "nat-amis" {
+    description = "Special ami preconfigured to do NAT"
+    default = {
+        us-east-1 = "ami-184dc970"
     }
 }
 
