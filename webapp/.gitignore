@@ -2,6 +2,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 node_modules
 *built*
+secret*
 
 ### STS ###
 .apt_generated
