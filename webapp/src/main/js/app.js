@@ -22,8 +22,8 @@ class App extends React.Component {
                 <BS.Panel header={title} bsStyle="success">
                     <BS.Grid>
                         <BS.Row className="show-grid">
-                            <BS.Col xs={6}>Contender 1</BS.Col>
-                            <BS.Col xs={6}>Contender 2</BS.Col>
+                            <BS.Col xs={3}>Contender 1</BS.Col>
+                            <BS.Col xs={3}>Contender 2</BS.Col>
                         </BS.Row>
                     </BS.Grid>
                 </BS.Panel>
